@@ -1,19 +1,15 @@
 /********************************************************************************************************
-				Trabalho prático 1 - Mata-mata
+				Trabalho prï¿½tico 1 - Mata-mata
 				
-Trabalho desenvolvido e apresentado ao Centro Federal de Educação Tecnológica de Minas Gerais(CEFET-MG)
+Trabalho desenvolvido e apresentado ao Centro Federal de Educaï¿½ï¿½o Tecnolï¿½gica de Minas Gerais(CEFET-MG)
 Aluno: Vitor Mendes de Oliveira Abreu
-Matrícula: 20213008630 
-Aluno: André Andrade Frontino Nogueira
-Matrícula: 20213002725
-Diciplina: Laboratório de Programação de Computadores 1, turma04A
 *********************************************************************************************************/
-/* O intuito deste trabalho é simular uma competição esportiva no modelo "mata-mata" como acontece em 
-diversos esportes. Neste trabalho temos 16 equipes com nomes de A à P, onde o usúario interage diretamente
+/* O intuito deste trabalho ï¿½ simular uma competiï¿½ï¿½o esportiva no modelo "mata-mata" como acontece em 
+diversos esportes. Neste trabalho temos 16 equipes com nomes de A ï¿½ P, onde o usï¿½ario interage diretamente
 com o programa e insere os resultados de todos os jogos de todos os confrontos de cada fase, o programa 
-processa os dados no final de todas as fases e no fim da última fase aponta qual foi a equipe campeã. Foi 
-utilizado vetores na composição do programa, é um conteúdo que ainda não foi visto na matéria até o momento
-mas facilitou o desenvolvimento do código */
+processa os dados no final de todas as fases e no fim da ï¿½ltima fase aponta qual foi a equipe campeï¿½. Foi 
+utilizado vetores na composiï¿½ï¿½o do programa, ï¿½ um conteï¿½do que ainda nï¿½o foi visto na matï¿½ria atï¿½ o momento
+mas facilitou o desenvolvimento do cï¿½digo */
 
 #include <stdio.h>
 #include <locale.h>
@@ -24,28 +20,28 @@ int main()
 	
 	char nomeEquipes[16] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'}; //Criando um vetor com o nome de todas as equipes
 
-	int resultequipesOitavas[16]; 		 //Nestes 4 vetores serão armazenados os das obtidos pelas equipes em cada fase
+	int resultequipesOitavas[16]; 		 //Nestes 4 vetores serï¿½o armazenados os das obtidos pelas equipes em cada fase
 	int resultequipesQuartas[8];
 	int resultequipesSemis[4];
 	int resultequipesFinais[2];
 	
-	char equipesVencOitvas[8] = { '\0' };		//Nestes 3 vetores serão armazenados os nomes das equipes que venceram a fase anterior
+	char equipesVencOitvas[8] = { '\0' };		//Nestes 3 vetores serï¿½o armazenados os nomes das equipes que venceram a fase anterior
 	char equipesVencQuartas[4] = { '\0'};		
-	char equipesVencSemis[2] = { '\0'};			//Não é necessário armazenar os dados aa equipe vencedora aqui, já que ela foi a campeã e não é necessário exibir sua pontuação
+	char equipesVencSemis[2] = { '\0'};			//Nï¿½o ï¿½ necessï¿½rio armazenar os dados aa equipe vencedora aqui, jï¿½ que ela foi a campeï¿½ e nï¿½o ï¿½ necessï¿½rio exibir sua pontuaï¿½ï¿½o
 	
 	
-	char nomeVencQuartas[4] = { '\0' };			//Nestes 3 vetores serão armazenados os nomes das equipes que venceram a fase atual e vão seguir para a próxima fase
+	char nomeVencQuartas[4] = { '\0' };			//Nestes 3 vetores serï¿½o armazenados os nomes das equipes que venceram a fase atual e vï¿½o seguir para a prï¿½xima fase
 	char nomeVencSemis[2] = { '\0' };
-	char nomeVencFinal = '\0';					//Nessa variável ficará o nome da gramde campeã
+	char nomeVencFinal = '\0';					//Nessa variï¿½vel ficarï¿½ o nome da gramde campeï¿½
 	
-	int m = 0, z = 0, y = 0;		//Aqui é declarado as variáveis que serão usadas de indices para as equipes que venceram a fase
-	int i, l, n, p, q, r, s, t;		//Aqui é declarado as variáveis que serão usadas nos laços de repetição "for"
+	int m = 0, z = 0, y = 0;		//Aqui ï¿½ declarado as variï¿½veis que serï¿½o usadas de indices para as equipes que venceram a fase
+	int i, l, n, p, q, r, s, t;		//Aqui ï¿½ declarado as variï¿½veis que serï¿½o usadas nos laï¿½os de repetiï¿½ï¿½o "for"
 	
 	for(i = 0 ; i <= 15;i++){
 		printf("\n Digite o resultado do jogo de duas equipes das oitavas de final \n");								//Recolhimento dos dados dos confrontos entre as equipes das oitavas de final
 		scanf("%d", &resultequipesOitavas[i]);
 		
-		printf("\n A equipe %c fez %d pontos, agora digite a próxima: \n", nomeEquipes[i], resultequipesOitavas[i]);	//Aqui acontecem os jogos de 1 à 8
+		printf("\n A equipe %c fez %d pontos, agora digite a prï¿½xima: \n", nomeEquipes[i], resultequipesOitavas[i]);	//Aqui acontecem os jogos de 1 ï¿½ 8
 		i++;
 		scanf("%d", &resultequipesOitavas[i]);	
 		printf("\n equipe %c fez %d pontos \n", nomeEquipes[i], resultequipesOitavas[i]);	
@@ -54,7 +50,7 @@ int main()
 	for( l = 0; l < 16; l++){																							//Processamento dos dados das equipes que obteveram mais pontos em cada confronto
 		if(resultequipesOitavas[l] < resultequipesOitavas[l + 1]){														
 			equipesVencOitvas[m] = nomeEquipes[l + 1];
-			printf("\n A equipe \" %c \" avançou de fase\n", equipesVencOitvas[m]);
+			printf("\n A equipe \" %c \" avanï¿½ou de fase\n", equipesVencOitvas[m]);
 		}else {
 			equipesVencOitvas[m] = nomeEquipes[l];
 			printf("\n A equipe \" %c \" avancou de fase\n", equipesVencOitvas[m]);
@@ -70,7 +66,7 @@ int main()
 	    printf("\n Digite o resultado do jogo de duas equipes das quartas de final \n");								//Recolhimento dos dados dos confrontos entre as equipes das quartas de final
 	    scanf("%d", &resultequipesQuartas[n]);
 	    
-	    printf("\n A equipe %c fez %d pontos, agora digite a próxima: \n", equipesVencOitvas[n], resultequipesQuartas[n]); //Aqui acontecem os jogos de 9 à 12
+	    printf("\n A equipe %c fez %d pontos, agora digite a prï¿½xima: \n", equipesVencOitvas[n], resultequipesQuartas[n]); //Aqui acontecem os jogos de 9 ï¿½ 12
 	    n++;
 	    scanf("%d", &resultequipesQuartas[n]);
 	    printf("\n A equipe %c fez %d pontos\n", equipesVencOitvas[n], resultequipesQuartas[n]);
@@ -78,10 +74,10 @@ int main()
 	for(p = 0; p < 8; p++){																								//Processamento dos dados das equipes que obteveram mais pontos em cada confronto
 		if(resultequipesQuartas[p] < resultequipesQuartas[p+1]){
 			nomeVencQuartas[z] =  equipesVencOitvas[p+1];	
-			printf("\n A equipe \" %c \" avançou de fase\n", nomeVencQuartas[z]);	
+			printf("\n A equipe \" %c \" avanï¿½ou de fase\n", nomeVencQuartas[z]);	
 		} else{
 			nomeVencQuartas[z] =  equipesVencOitvas[p];
-			printf("\n A equipe \" %c \" avançou de fase\n", nomeVencQuartas[z]);
+			printf("\n A equipe \" %c \" avanï¿½ou de fase\n", nomeVencQuartas[z]);
 		}
 		z++;
 		p++;
@@ -93,7 +89,7 @@ int main()
 		printf("\n Digite o resultado do jogo de duas equipes das semi final \n");
 	    scanf("%d", &resultequipesSemis[q]);
 	    
-	    printf("\n A equipe %c fez %d pontos, agora digite a próxima: \n", nomeVencQuartas[q], resultequipesSemis[q]);	//Aqui acontecem os jogos 13 e 14
+	    printf("\n A equipe %c fez %d pontos, agora digite a prï¿½xima: \n", nomeVencQuartas[q], resultequipesSemis[q]);	//Aqui acontecem os jogos 13 e 14
 	    q++;
 	    scanf("%d", &resultequipesSemis[q]);
 	    printf("\n A equipe %c fez %d pontos\n", nomeVencQuartas[q], resultequipesSemis[q]);
